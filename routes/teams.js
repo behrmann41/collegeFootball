@@ -30,6 +30,22 @@ router.get('/:id', function (req, res, next) {
   })
 })
 
+router.get('/:id/edit', function (req, res, next) {
+  collegeTeams.findOne({_id: req.params.id}, function (err, data){
+    res.render('teams/edit', { theTeam: data})
+  })
+})
+
+router.post('/:id/edit', function (req, res, next) {
+  collegeTeams.updateById(req.params.id, {  school: req.body.collegename,
+                                            location: req.body.city,
+                                            mascot: req.body.mascot,
+                                            accredited: req.body.accredited
+                                          }, function (err, data) {
+  res.redirect('/teams/' + req.params.id)
+  })
+})
+
 
 
 module.exports = router;
