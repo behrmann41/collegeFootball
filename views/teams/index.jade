@@ -4,3 +4,20 @@ block content
   h1= title
 
   a(href='/teams/new') Add a Team
+
+  table
+    thead
+      tr
+        th College Name
+        th Location
+        th Mascot
+        th Accredited
+
+    tbody
+      for team in allTeams
+        tr
+          td= team.school
+          td= team.location
+          td= team.mascot
+          td= team.accredited
+

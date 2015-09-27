@@ -4,4 +4,20 @@ block content
 
   h1= title
 
-  form(action='' method='POST')
+  form(action='/teams' method='post')
+    .form
+      label(for='collegename') School Name:
+      input(type='text' id='collegename' name='collegename')
+      p
+      label(for='city') City:
+      input(type='text' id='city' name='city')
+      p
+      label(for='mascot') Mascot:
+      input(type='text' id='mascot' name='mascot')
+      p
+      label(for='accredited') Accredited:
+      input(type='checkbox' id='accredited' name='accredited' value='yes')
+      p
+      input(type='submit')
+      p
+      a(href='/teams') Cancel
