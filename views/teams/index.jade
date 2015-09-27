@@ -16,7 +16,8 @@ block content
     tbody
       for team in allTeams
         tr
-          td= team.school
+          td
+            a(href='teams/' + team._id)= team.school
           td= team.location
           td= team.mascot
           td= team.accredited

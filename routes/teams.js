@@ -24,6 +24,12 @@ router.post('/', function (req, res, next) {
   res.redirect('/teams');
 })
 
+router.get('/:id', function (req, res, next) {
+  collegeTeams.findOne({_id: req.params.id}, function (err, data){
+    res.render('teams/show', { theTeam: data })
+  })
+})
+
 
 
 module.exports = router;
